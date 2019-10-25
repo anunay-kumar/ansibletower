@@ -6,7 +6,9 @@
     yum: name=mariadb-server state=latest
     tags:
     - install
+    when: ansible_os_family == "RedHat"
   - name: start service
     service: name=mariadb state=started
     tags:
     - start
+    when: ansible_os_family == "RedHat"
